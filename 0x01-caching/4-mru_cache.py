@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Create a class FIFOCache that inherits from BaseCaching and is a caching system
+Create a class MRUCache that inherits from BaseCaching and is a caching system
     You must use self.cache_data - dictionary from the parent class BaseCaching
     You can overload def __init__(self)
     but don't forget to call the parent init: super().__init__()
@@ -10,7 +10,7 @@ Create a class FIFOCache that inherits from BaseCaching and is a caching system
         If key or item is None, this method should not do anything.
         If the number of items in self.cache_data is higher
         that BaseCaching.MAX_ITEMS:
-            you must discard the first item put in cache (FIFO algorithm)
+            you must discard the first item put in cache (MRU algorithm)
             you must print DISCARD: with the key discarded
             and following by a new line
     def get(self, key):
@@ -22,9 +22,9 @@ from base_caching import BaseCaching
 from collections import OrderedDict
 
 
-class FIFOCache(BaseCaching):
+class MRUCache(BaseCaching):
     """
-    Inherits from BaseCaching and is a FIFO caching system
+    Inherits from BaseCaching and is a MRU caching system
     """
     def __init__(self):
         """
