@@ -42,7 +42,7 @@ class FIFOCache(BaseCaching):
             return
         if key not in self.cache_data:
             if len(self.cache_data) + 1 > BaseCaching.MAX_ITEMS:
-                cache_key = self.cache_data.popitem(True)
+                cache_key, _ = self.cache_data.popitem(True)
                 print("DISCARD:", cache_key)
             self.cache_data[key] = item
             self.cache_data.move_to_end(key, last=False)
