@@ -31,7 +31,7 @@ def test_page():
     """
     Creates a single / route and an index.html template.
     """
-    return render_template('2-index.html')
+    return render_template('index.html')
 
 
 @babel.localeselector
