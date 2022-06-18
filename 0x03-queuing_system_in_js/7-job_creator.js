@@ -1,5 +1,4 @@
 import kue from 'kue';
-const queue = kue.createQueue();
 
 const jobs = [
     {
@@ -48,8 +47,10 @@ const jobs = [
     }
 ];
 
+const queue = kue.createQueue();
+
 for (const jobItem of jobs) {
-    const job = queue.create('push_notification_code', jobItem)
+    const job = queue.create('push_notification_code_2', jobItem)
         .save((error) => {
             if (!error) console.log(`Notification job created: ${job.id}`);
         });
